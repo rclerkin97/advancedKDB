@@ -18,7 +18,7 @@ export advancedKDB="$(dirname "$dir")"
 /////////////////////////////    PART 1 - TICKER PLANT   /////////////////////////////
 
 GCP Directory 
-/home/rclerkin_kx_com/submission/v1
+/home/rclerkin_kx_com/advancedKDB
 
 $advancedKDB/tickerplant.q
 
