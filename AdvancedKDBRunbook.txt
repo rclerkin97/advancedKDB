@@ -20,7 +20,7 @@ export advancedKDB="$(dirname "$dir")"
 GCP Directory 
 /home/rclerkin_kx_com/submission/v1
 
-/home/rclerkin_kx_com/submission/v1/tickerplant.q
+$advancedKDB/tickerplant.q
 
 Manual Commands to run tickerplant
 
