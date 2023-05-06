@@ -24,7 +24,7 @@ GCP Directory
 
 Manual Commands to run tickerplant
 
-In a linux envirnoment inside "/home/rclerkin_kx_com/submission/v1" run:
+In a linux envirnoment inside "$advancedKDB" run:
 
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
@@ -41,7 +41,7 @@ $advancedKDB/tick/rdbAGG.q
 
 Manual Commands for running the Trade Quote and aggregation RDBs
 
-In a linux envirnoment inside "/home/rclerkin_kx_com/submission/v1" run:
+In a linux envirnoment inside "$advancedKDB" run:
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
 echo $tpPort
@@ -61,7 +61,7 @@ $advancedKDB/tick/feedHandler.q
 
 Manual Commands to run the Feedhandler
 
-In a seperate linux envirnoment inside "advancedKDB" run:
+In a seperate linux envirnoment inside "$advancedKDB" run:
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
 echo $tpPort
@@ -75,7 +75,7 @@ $advancedKDB/tick/cep.q
 
 Manual Commands to run the Complex Event Processor
 
-In a linux envirnoment inside "advancedKDB" run:
+In a linux envirnoment inside "$advancedKDB" run:
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
 echo $tpPort
@@ -116,7 +116,7 @@ ___________________________________________________
 //////////////////////////   PART 7 -TICKERPLANT LOG REPLAY  /////////////////////////////
 $advancedKDB/tpLogReplay.q
 
-The tickerplant logs will be in the folder "v1"
+The tickerplant logs will be in starting folder
 
 q tpLogReplay.q sym2023.05.03
 
@@ -125,7 +125,7 @@ ___________________________________________________
 //////////////////////////   PART 8 - CSV FILE LOAD  /////////////////////////////
 $advancedKDB/CSVFileLoader.q
 
-To load a new csv file into a table
+To load a new csv file into the TP
 q CSVReader.q [table] [csv file] [port number]
 
 q CSVFileLoader.q trade trade.csv 5000
@@ -171,7 +171,7 @@ ___________________________________________________
 TP/RDB Problem
 
 Answer can be found here:
-/home/rclerkin_kx_com/submission/v1/Q2/Q2_Debugging_Part_1.txt
+https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_1.txt
 
 ___________________________________________________
 
@@ -180,7 +180,7 @@ ___________________________________________________
 Splay Table Problem 
 
 Answer can be found here:
-/home/rclerkin_kx_com/submission/v1/Q2/Q2_Debugging_Part_2.txt
+https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_2.txt
 
 ___________________________________________________
 
@@ -189,7 +189,7 @@ ___________________________________________________
 Blocking Calls
 
 Answer can be found here:
-/home/rclerkin_kx_com/submission/v1/Q2/Q2_Debugging_Part_3.txt
+https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_3.txt
 
 ___________________________________________________
 
@@ -198,7 +198,7 @@ ___________________________________________________
 Query Performance
 
 Answer can be found here:
-/home/rclerkin_kx_com/submission/v1/Q2/Q2_Debugging_Part_4.txt
+https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_4.txt
 
 QUESTION 2 COMPLETE 
 
