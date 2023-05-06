@@ -4,7 +4,7 @@ Part 1 - TP/RDB Problem
 Fixing the issues in tp log tplog
 Inside Q2/
 Run
-q . 
+q
 
 q)TPLog:get `:tplog
 q)TPLog

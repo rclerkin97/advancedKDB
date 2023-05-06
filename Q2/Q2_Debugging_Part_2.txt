@@ -4,7 +4,7 @@ Part 2 - Splay Table Problem
 Identify the errors in the 3 tables and provide a fix for each 
 Inside Q2/db
 Run
-q
+q .
 
 t1:
 Inside t1 there is no .d file so the table is displaying incorrectly as a dictionary like the following:
