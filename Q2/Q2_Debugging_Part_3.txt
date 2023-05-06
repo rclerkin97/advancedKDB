@@ -1,0 +1,22 @@
+Question 2 - Debugging 
+
+Part 3 - Blocking Calls
+
+Q: In your current kdb system you have one hdb instance to host user queries. 
+At certain times of the day users complain about slowness. 
+What is the probable cause of the slowness? 
+Suggest two changes that would help solve this issue while maintaining a single point of entry for user connections.
+
+Cause of slowness:
+This is likely due to multiple users trying to query the data over the one hdb instance, so more and more queries are being queued.
+This is causing a slow response return for users as they have to wait for the other queries sent before them to finish before theirs is ran on the one instant.
+
+Solution 1: 
+Use of a Multi-threaded HDB, additional slaves can be started on command line with "-s", 
+use peach or .Q.fc to distribute the work.
+
+Solution 2: 
+Use of a Segmented HDB, user queries will be able to use multiple I/O channels and associated bandwidth, 
+and then be able pull data concurrently speed up queue times. 
+Multiple directories will be used to spread the table's records.
+Data retrieval occurs in parallel due to the segments being placed into independent Input and Output channels.

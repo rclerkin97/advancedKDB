@@ -1,0 +1,34 @@
+Question 2 - Debugging 
+
+Part 4 - Query Performance
+
+Original function, broken down line by line to be more readable:
+
+StringtoDate:{[x]
+	{$[10h~abs type x;
+	x:"D"$x;
+	-14h~ type x;
+	x:x;
+	`date$x]}'[x]
+	}; 
+
+Running in q:
+q)StringtoDate:{[x]{$[10h~abs type x;x:"D"$x;-14h~ type x;x:x;`date$x]}'[x]}; 
+q)input: raze 500000#enlist("2010.01.01";2010.01.02)
+q)\ts:1000 StringtoDate input
+918074 20553076
+
+New version of StringtoDate:
+
+StringtoDate:{[x]
+	{if[-14h<>type x;
+		x:"D"$x]}'[x]
+	}
+
+Running in q:
+q)StringtoDate:{[x]{if[-14h<>type x;x:"D"$x]}'[x]}
+q)input: raze 500000#enlist("2010.01.01";2010.01.02)
+q)\ts:1000 StringtoDate input
+805659 8388867
+
+As can be seen, the new version of the function has a much faster response time. 
