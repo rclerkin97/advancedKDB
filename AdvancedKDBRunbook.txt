@@ -146,7 +146,7 @@ q hdbEOD.q ../sym2023.05.03
 ___________________________________________________
 
 //////////////////////////   PART 10 - SCHEMA CHANGE   /////////////////////////////
-/home/rclerkin_kx_com/submission/v1/schemaChangeAns.txt
+https://github.com/rclerkin97/advancedKDB/blob/main/schemaChangeAns.txt
 
 Q: Discuss the effect a schema change to the trade table in the above system e.g. a sequence number column was added to both trade and quote tables.
 A:The feedhandler would keep inserting and updating the data with a missing column, unless it is updated to reflect the new column.
