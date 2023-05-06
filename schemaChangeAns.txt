@@ -1,0 +1,12 @@
+Q: Discuss the effect a schema change to the trade table in the above system e.g. a sequence number column was added to both trade and quote tables.
+A:Current feedhandler would keep inserting data with a missing column unless updated
+
+Q: How you would plan a turnover to update the schema.
+A: Have the end of day run and make sure all the data has been saved down to the HDB
+Use the addcol function of dbmaint.q
+
+Create a backup of the sym file
+
+Add the column to the trade and quote table using the addcol function of dbmaint.q
+
+Update the .d file to reflect the changes like a reordering of the columns, a new column being added or a type change
