@@ -213,10 +213,10 @@ ___________________________________________________
 Python API
 
 The python API for loading the file can be found here
-/home/rclerkin_kx_com/submission/v1/Q3/pythonAPI
+https://github.com/rclerkin97/advancedKDB/tree/main/Q3/pythonAPI
 
 Change the hostname and port and csv filepath to match the setup you have been using inside: 
-/home/rclerkin_kx_com/submission/v1/Q3/pythonAPI/CSVFileLoader.py
+$advancedKDB/Q3/pythonAPI/CSVFileLoader.py
 
 To run the API
 python CSVFileLoader.py
@@ -227,6 +227,6 @@ ___________________________________________________
 
 Web Interface - HTML5
 
-With the tickerplant running, edit the hostname and port to the ones you are using in: /home/rclerkin_kx_com/submission/v1/Q3/webInterface/simpleWebPage.html
+With the tickerplant running, edit the hostname and port to the ones you are using in: $advancedKDB/Q3/webInterface/simpleWebPage.html
 
 Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. GS.N
