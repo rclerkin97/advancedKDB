@@ -3,7 +3,8 @@ The change is to add a new column called seqNum with a long type for the values.
 
 Outline a step-by-step plan to adjust the schema of a table in the above system and describe key points for consideration when modifying processes in the setup.
 
-Points to consider: Current feedhandler would keep inserting data with a missing column unless updated
+Points to consider: 
+Current feedhandler would keep inserting data with a missing column unless updated
 
 Schema Change Plan:
 Have the end of day run and make sure all the data has been saved down to the HDB
@@ -12,3 +13,4 @@ Update the schema file to add the new column
 Update the .d file to reflect the changes like a reordering of the columns, a new column being added or a type change
 Add the column to the trade table using the addcol function of dbmaint.q
 Add null values to the new column to avoid length error 
+Update the feed handler so that data will be inserted into the newly added column
