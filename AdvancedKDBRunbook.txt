@@ -146,17 +146,9 @@ q hdbEOD.q ../sym2023.05.03
 ___________________________________________________
 
 //////////////////////////   PART 10 - SCHEMA CHANGE   /////////////////////////////
+Answer can be found here:
+
 https://github.com/rclerkin97/advancedKDB/blob/main/schemaChangeAns.txt
-
-Q: Discuss the effect a schema change to the trade table in the above system e.g. a sequence number column was added to both trade and quote tables.
-A:The feedhandler would keep inserting and updating the data with a missing column, unless it is updated to reflect the new column.
-
-Q: How you would plan a turnover to update the schema.
-A: Run the end of day script and make sure all the data has been saved down to the HDB
-Create a backup of the sym file
-Add the column to the trade and quote table using the addcol function of dbmaint.q
-Update the .d file to reflect the changes like a reordering of the columns, a new column being added or a type change
-May need to add nulls to the table for the column in previous records. 
 
 QUESTION 1 COMPLETE 
 
