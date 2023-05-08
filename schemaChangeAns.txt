@@ -1,8 +1,14 @@
-Q: Discuss the effect a schema change to the trade table in the above system e.g. a sequence number column was added to both trade and quote tables.
-A:Current feedhandler would keep inserting data with a missing column unless updated
+Q: You have been tasked with writing up the runbook notes to make a schema change to the trade table in the above system. 
+The change is to add a new column called seqNum with a long type for the values.
 
-Q: How you would plan a turnover to update the schema.
-A: Have the end of day run and make sure all the data has been saved down to the HDB
+Outline a step-by-step plan to adjust the schema of a table in the above system and describe key points for consideration when modifying processes in the setup.
+
+Points to consider: Current feedhandler would keep inserting data with a missing column unless updated
+
+Schema Change Plan:
+Have the end of day run and make sure all the data has been saved down to the HDB
 Create a backup of the sym file
-Add the column to the trade and quote table using the addcol function of dbmaint.q
+Update the schema file to add the new column
 Update the .d file to reflect the changes like a reordering of the columns, a new column being added or a type change
+Add the column to the trade table using the addcol function of dbmaint.q
+Add null values to the new column to avoid length error 
