@@ -143,6 +143,9 @@ Change the sym date in the command to todays date
 
 q hdbEOD.q ../sym2023.05.03
 
+When using the previously created bash scripts, as the sym dated file will be created in the same directory as the scripts it runs in, the command will look like this:
+
+q hdbEOD.q ../scripts/sym2023.05.10
 ___________________________________________________
 
 //////////////////////////   PART 10 - SCHEMA CHANGE   /////////////////////////////
