@@ -222,6 +222,6 @@ ___________________________________________________
 
 Web Interface - HTML5
 
-With the tickerplant and trade quote rdb running, edit the hostname and port to the ones you are using in: $advancedKDB/Q3/webInterface/simpleWebPage.html
+With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: $advancedKDB/Q3/webInterface/simpleWebPage.html
 
 Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. GS.N
