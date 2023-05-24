@@ -18,7 +18,7 @@ export advancedKDB="$(dirname "$dir")"
 /////////////////////////////    PART 1 - TICKER PLANT   /////////////////////////////
 
 GCP Directory 
-/home/rclerkin_kx_com/advancedKDB
+/home/rclerkin_kx_com/submissionV2/advancedKDB
 
 $advancedKDB/tickerplant.q
 
@@ -101,7 +101,7 @@ $advancedKDB/scripts/test.sh
 $advancedKDB/scripts/stop.sh
 
 To use these scripts, first ensure there are no processes running on the port: 5000
-You can always change this port for another in AdvancedKDB/scripts/config
+You can always change this port for another in $advancedKDB/scripts/config.sh
 Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
 
 To start the processes run (you will see options for yes or no for what you would like to start):
@@ -151,7 +151,7 @@ ___________________________________________________
 //////////////////////////   PART 10 - SCHEMA CHANGE   /////////////////////////////
 Answer can be found here:
 
-https://github.com/rclerkin97/advancedKDB/blob/main/schemaChangeAns.txt
+/home/rclerkin_kx_com/submissionV2/advancedKDB/schemaChangeAns.txt
 
 QUESTION 1 COMPLETE 
 
@@ -166,7 +166,7 @@ ___________________________________________________
 TP/RDB Problem
 
 Answer can be found here:
-https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_1.txt
+/home/rclerkin_kx_com/submissionV2/advancedKDB/Q2/Q2_Debugging_Part_1.txt
 
 ___________________________________________________
 
@@ -175,7 +175,7 @@ ___________________________________________________
 Splay Table Problem 
 
 Answer can be found here:
-https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_2.txt
+/home/rclerkin_kx_com/submissionV2/advancedKDB/Q2/Q2_Debugging_Part_2.txt
 
 ___________________________________________________
 
@@ -184,7 +184,7 @@ ___________________________________________________
 Blocking Calls
 
 Answer can be found here:
-https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_3.txt
+/home/rclerkin_kx_com/submissionV2/advancedKDB/Q2/Q2_Debugging_Part_3.txt
 
 ___________________________________________________
 
@@ -193,7 +193,7 @@ ___________________________________________________
 Query Performance
 
 Answer can be found here:
-https://github.com/rclerkin97/advancedKDB/blob/main/Q2/Q2_Debugging_Part_4.txt
+/home/rclerkin_kx_com/submissionV2/advancedKDB/Q2/Q2_Debugging_Part_4.txt
 
 QUESTION 2 COMPLETE 
 
@@ -208,10 +208,21 @@ ___________________________________________________
 Python API
 
 The python API for loading the file can be found here
-https://github.com/rclerkin97/advancedKDB/tree/main/Q3/pythonAPI
+/home/rclerkin_kx_com/submissionV2/advancedKDB/Q3/pythonAPI
 
-Change the hostname and port and csv filepath to match the setup you have been using inside: 
+The python script is named CSVFileLoader.py
+The CSV containing the updates is named trade.csv
+Examples of updates to the trade table:
+
+time	                sym	price	        size
+0D20:00:55.448628000	FDP	146.2345	700
+0D20:01:05.447662000	KX	64.1267	        333
+
+You can adjust the python loader script to change the hostname, port and csv filepath to match the setup you have been using inside: 
 $advancedKDB/Q3/pythonAPI/CSVFileLoader.py
+In lines 7 and 8:
+with qconnection.QConnection(host='localhost', port=5000) as q:
+    with open("C:/Users/rossc/OneDrive/Desktop/Advanced-kdb-files-Ross/advancedKDB-main/Q3/pythonAPI/trade.csv", "r") as f:
 
 To run the API
 python CSVFileLoader.py
@@ -224,4 +235,4 @@ Web Interface - HTML5
 
 With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: $advancedKDB/Q3/webInterface/simpleWebPage.html
 
-Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. GS.N
+Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. KX
