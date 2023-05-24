@@ -20,3 +20,9 @@ Use of a Segmented HDB, user queries will be able to use multiple I/O channels a
 and then be able pull data concurrently speed up queue times. 
 Multiple directories will be used to spread the table's records.
 Data retrieval occurs in parallel due to the segments being placed into independent Input and Output channels.
+
+Query validation can also be used to ensure that queries are not causing slowness. You can implement a timeout feature, 
+So if a query is running for too long due to a factor such as a very large date range, it can be dropped from the handle, 
+for example, a query can only run for around 5 minutes. You could also provide an alert with the drop message to inform the user
+to make use of additional where clauses to help define their query and return results faster. 
+
