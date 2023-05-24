@@ -150,41 +150,8 @@ sym price     size
 ..
 
 t3:
-I have done several checks on t3 and have not found any issues or conflicts with t1 or t2.
-The only difference visible is that sym in t3 is alphabetic and not numeric.
-
-t3:get `:t3
-q)t3
-sym price     size
-------------------
-A   9.367503  12  
-C   2.782122  10  
-C   2.392341  1   
-A   1.508133  90  
-A   1.567317  73  
-A   9.785     90  
-A   7.043314  43  
-C   9.441671  90  
-C   7.833686  84  
-B   4.099561  63  
-B   6.108817  93  
-C   4.976492  54  
-C   4.087545  38  
-B   4.49731   97  
-B   0.1392076 88  
-A   7.148779  58  
-C   1.946509  68  
-A   0.9059026 45  
-C   6.203014  2   
-B   9.326316  39  
-..
-q)type each t3
-99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99h
-q)count t3
-25
-q)distinct type each t3`sym
-,-11h
-q)distinct type each t3`price
-,-9h
-q)distinct type each t3`size
-,-7h
+Running `:t3 set t3
+'splay
+  [0]  `:t3 set t3
+            ^
+This means there is a unimplemented op on a splayed table 
