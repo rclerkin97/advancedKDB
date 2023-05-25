@@ -150,8 +150,75 @@ sym price     size
 ..
 
 t3:
-Running `:t3 set t3
-'splay
-  [0]  `:t3 set t3
-            ^
-This means there is a unimplemented op on a splayed table 
+t3's sym column has not been enumerated, and therefore must be saved down again as an enumerated version
+
+q)t3
+sym price     size
+------------------
+A   9.367503  12  
+C   2.782122  10  
+C   2.392341  1   
+A   1.508133  90  
+A   1.567317  73  
+A   9.785     90  
+A   7.043314  43  
+C   9.441671  90  
+C   7.833686  84  
+B   4.099561  63  
+B   6.108817  93  
+C   4.976492  54  
+C   4.087545  38  
+B   4.49731   97  
+B   0.1392076 88  
+A   7.148779  58  
+C   1.946509  68  
+A   0.9059026 45  
+C   6.203014  2   
+B   9.326316  39  
+..
+q)sym:get `:t3/sym
+q)sym
+`A`C`C`A`A`A`A`C`C`B`B`C`C`B`B`A`C`A`C`B`C`B`A`C`B
+q)sym:`sym!0 2 2 0 0 0 0 2 2 1 1 2 2 1 1 0 2 0 2 1 2 1 0 2 1
+q)sym
+`sym!0 2 2 0 0 0 0 2 2 1 1 2 2 1 1 0 2 0 2 1 2 1 0 2 1
+
+q)size:get `:t3/size
+q)price:get `:t3/price
+q)flip `sym`price`size!(sym;price;size)
+sym price     size
+------------------
+0   9.367503  12  
+2   2.782122  10  
+2   2.392341  1   
+0   1.508133  90  
+0   1.567317  73  
+0   9.785     90  
+0   7.043314  43  
+2   9.441671  90  
+2   7.833686  84  
+1   4.099561  63  
+1   6.108817  93  
+2   4.976492  54  
+2   4.087545  38  
+1   4.49731   97  
+1   0.1392076 88  
+0   7.148779  58  
+2   1.946509  68  
+0   0.9059026 45  
+2   6.203014  2   
+1   9.326316  39
+
+q)exec sym from (flip `sym`price`size!(sym;price;size))
+`sym!0 2 2 0 0 0 0 2 2 1 1 2 2 1 1 0 2 0 2 1 2 1 0 2 1
+
+This new version can then be saved like the following
+q)`:t3/ set flip `sym`price`size!(sym;price;size)
+
+
+
+
+
+
+
+
